@@ -1,6 +1,7 @@
 import Search from "./Search";
 import GetDeviceLocation from "./GetDeviceLocation";
 import useForecast from "../hooks/useForecast";
+import Forecast from "./Forecast";
 
 export default function Home(): JSX.Element {
   const {
@@ -14,7 +15,7 @@ export default function Home(): JSX.Element {
   return (
     <>
       {forecast ? (
-        forecast.sunrise
+        <Forecast forecast={forecast} />
       ) : (
         <section className="w-full md:max-w-[340px] flex flex-col h-full lg:h-[240px] bg-white  backdrop-blur-lg drop-shadow-lg rounded">
           <div className="p-1 ml-4 mt-2">
