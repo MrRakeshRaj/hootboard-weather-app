@@ -47,6 +47,15 @@ export default function Home(): JSX.Element {
     }
   }, [city]);
 
+  const closeMenus = () => {
+    console.log("called closeMenus");
+    setLocationDetails([]);
+  };
+
+  useEffect(() => {
+    document.onmouseup = closeMenus;
+  }, [locationDetails]);
+
   const onInputChange = async (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.trim();
     setLocation(e.target.value);
