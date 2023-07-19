@@ -14,12 +14,9 @@ export default function Home(): JSX.Element {
   return (
     <>
       {forecast ? (
-        "This is the weather forecast"
+        forecast.sunrise
       ) : (
-        <form
-          onSubmit={(e) => e.preventDefault()}
-          className="w-full md:max-w-[340px] flex flex-col h-full lg:h-[240px] bg-white  backdrop-blur-lg drop-shadow-lg rounded"
-        >
+        <section className="w-full md:max-w-[340px] flex flex-col h-full lg:h-[240px] bg-white  backdrop-blur-lg drop-shadow-lg rounded">
           <div className="p-1 ml-4 mt-2">
             <h1 className="text-sky-400/100 text-lg font-bold">Weather App</h1>
           </div>
@@ -34,7 +31,7 @@ export default function Home(): JSX.Element {
             />
             <GetDeviceLocation />
           </div>
-        </form>
+        </section>
       )}
     </>
   );

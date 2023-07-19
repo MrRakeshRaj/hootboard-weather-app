@@ -25,12 +25,15 @@ const useForecast = () => {
 
   const getForecast = async (loc: locationDetailsType) => {
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${loc.lat}&lon=${
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${loc.lat}&lon=${
         loc.lon
       }&units=metric&appid=${import.meta.env.VITE_WEATHER_API_KEY}`
     );
+
     const data = await response.json();
-    setForecast(data);
+    const forecastData = { ...data.city, list: data.list.slice(0, 17) };
+    setForecast(forecastData);
+    console.log(data);
   };
 
   const handleLocationSelect = (loc: locationDetailsType) => {
