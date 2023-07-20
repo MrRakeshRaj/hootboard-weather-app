@@ -15,7 +15,7 @@ export default function Home(): JSX.Element {
   return (
     <>
       {forecast ? (
-        <Forecast forecast={forecast} />
+        <Forecast data={forecast} />
       ) : (
         <section className="w-full md:max-w-[340px] flex flex-col h-full lg:h-[240px] bg-white  backdrop-blur-lg drop-shadow-lg rounded">
           <div className="p-1 ml-4 mt-2">
