@@ -18,7 +18,7 @@ export default function Forecast({ data }: propsType): JSX.Element {
   let Icon = lazy(() => import(`../Icons/${componentName}`));
 
   return (
-    <section className="w-full md:max-w-[310px] flex flex-col h-full lg:h-[400px] bg-white  backdrop-blur-lg drop-shadow-lg rounded">
+    <section className="w-full md:max-w-[342px] flex flex-col h-full lg:h-[450px] bg-white  backdrop-blur-lg drop-shadow-lg rounded">
       <div className="p-1 ml-2 mt-2">
         <div className="flex flex-row">
           <BackArrowButton />
@@ -27,33 +27,45 @@ export default function Forecast({ data }: propsType): JSX.Element {
       </div>
 
       <hr className="h-px mr-0 ml-0 bg-gray-300 border-1"></hr>
-      {/* no Changes */}
-
+      {/* weather icon and temperature */}
       <div className="flex relative flex-col justify-center p-2 mx-2">
         <div className="mt-0">
           <Suspense fallback={<Loading />}>{Icon && <Icon />}</Suspense>
         </div>
-        <div className="absolute text-6xl mt-20 ml-20 font-poppins">
+        <div className="absolute text-6xl mt-24 font-poppins w-full text-center">
           <span className="font-black">
             {Math.round(today.main.temp)}
-            <sup className="font-bold text-lg">o</sup>
+            <sup
+              className="font-extrabold text-xl"
+              style={{
+                verticalAlign: "top",
+                position: "relative",
+                top: "-0.125em",
+                right: "-0.35em",
+              }}
+            >
+              o
+            </sup>
           </span>
-          <span className="font-bold"> C</span>
+          <span className="font-bold ml-1 p-2">C</span>
         </div>
-        <div className="text-l font-sans inline-flex">
-          <MapPin />
-          <span>
-            {data.name}, {data.country}
-          </span>
-        </div>
-
-        <div>
-          <span>{titleCase(today.weather[0].description)}</span>
+        {/* description and city */}
+        <div className="font-poppins font-bold text-lg">
+          <div className="w-full text-center pb-2 mt-0">
+            <span>{titleCase(today.weather[0].description)}</span>
+          </div>
+          <div className="w-full text-center">
+            <div className="inline-flex text-center m-auto">
+              <MapPin />
+              <span className="text-base text-center">
+                {data.name}, {data.country}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
-      {/* footer */}
-      {/* <hr className="h-px my-2 mb-4 mr-0 ml-0 bg-gray-300 border-1"></hr> */}
-      <div className="flex flex-row w-full">
+      {/* last section of card */}
+      <div className="flex flex-row w-full h-full mt-2">
         <div className="border-gray-200 border w-full">
           <div className="flex flex-row">
             <div>icon</div>
