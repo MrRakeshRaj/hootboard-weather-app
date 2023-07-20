@@ -13,7 +13,9 @@ const useForecast = () => {
         import.meta.env.VITE_WEATHER_API_KEY
       }`
     );
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const data = await response.json();
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     setLocationDetails(data);
     console.log(data);
   };
@@ -30,8 +32,11 @@ const useForecast = () => {
       }&units=metric&appid=${import.meta.env.VITE_WEATHER_API_KEY}`
     );
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const data = await response.json();
-    const forecastData = { ...data.city, list: data.list.slice(0, 17) };
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+    const forecastData = { ...data?.city, list: data?.list?.slice(0, 17) };
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     setForecast(forecastData);
     console.log(data);
   };

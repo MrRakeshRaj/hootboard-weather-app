@@ -1,4 +1,4 @@
-export const titleCase = (str) => {
+export const titleCase = (str: string): string => {
   return str
     .toLowerCase()
     .split(" ")

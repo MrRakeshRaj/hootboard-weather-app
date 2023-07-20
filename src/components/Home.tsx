@@ -26,8 +26,10 @@ export default function Home(): JSX.Element {
             <Search
               location={location}
               locationDetails={locationDetails}
+              // eslint-disable-next-line @typescript-eslint/no-misused-promises
               onInputChange={onInputChange}
               handleLocationSelect={handleLocationSelect}
+              // eslint-disable-next-line @typescript-eslint/no-misused-promises
               onSubmit={onSubmit}
             />
             <GetDeviceLocation />
