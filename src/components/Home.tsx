@@ -1,7 +1,7 @@
 import Search from "./Search";
 import GetDeviceLocation from "./GetDeviceLocation";
 import useForecast from "../hooks/useForecast";
-import Forecast from "./Forecast";
+import Forecast from "./forecast/Forecast";
 
 export default function Home(): JSX.Element {
   const {

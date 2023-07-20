@@ -1,12 +1,20 @@
-import { forecastType } from "../types";
-import { titleCase } from "../helpers/titleCase";
+import { forecastType } from "../../types";
+import { titleCase } from "../../helpers/titleCase";
+import { getComponentName } from "../../helpers/getComponentName";
+import { lazy, Suspense, useCallback } from "react";
+import Loading from "../Loading";
+import "./forecast.css";
+
 type propsType = {
   data: forecastType;
 };
 
 export default function Forecast({ data }: propsType): JSX.Element {
   const today = data.list[0];
-  const weather = today.weather;
+  const { icon } = today.weather[0];
+  let componentName = useCallback(getComponentName(icon), [icon]);
+  let Icon = lazy(() => import(`../Icons/${componentName}`));
+
   return (
     <section className="w-full md:max-w-[300px] flex flex-col h-full lg:h-[400px] bg-white  backdrop-blur-lg drop-shadow-lg rounded">
       <div className="p-1 ml-2 mt-2">
@@ -59,6 +67,10 @@ export default function Forecast({ data }: propsType): JSX.Element {
               {data.name}, {data.country}
             </span>
           </div>
+          <div>
+            <Suspense fallback={<Loading />}>{Icon && <Icon />}</Suspense>
+          </div>
+
           <div>
             <span>
               {Math.round(today.main.temp)}
