@@ -6,7 +6,8 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     width="64"
     height="64"
-    viewbox="0 0 64 64">
+    viewbox="2 1 50 50"
+    style="height: 70%; width: 85%; left: 0; top: 0;" >
     <defs>
         <style type="text/css"><![CDATA[
 /*
