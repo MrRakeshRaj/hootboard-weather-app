@@ -6,6 +6,8 @@ import Loading from "../Loading";
 import "./forecast.css";
 import BackArrowButton from "../Icons/BackArrowButton";
 import MapPin from "../Icons/MapPin";
+import FeelsLike from "../Icons/FeelsLike";
+import Humidity from "../Icons/Humidity";
 
 type propsType = {
   data: forecastType;
@@ -18,7 +20,7 @@ export default function Forecast({ data }: propsType): JSX.Element {
   let Icon = lazy(() => import(`../Icons/${componentName}`));
 
   return (
-    <section className="w-full md:max-w-[342px] flex flex-col h-full lg:h-[450px] bg-white  backdrop-blur-lg drop-shadow-lg rounded">
+    <section className="w-full md:max-w-[330px] flex flex-col h-full lg:h-[459px] bg-white  backdrop-blur-lg drop-shadow-lg rounded">
       <div className="p-1 ml-2 mt-2">
         <div className="flex flex-row">
           <BackArrowButton />
@@ -65,29 +67,29 @@ export default function Forecast({ data }: propsType): JSX.Element {
         </div>
       </div>
       {/* last section of card */}
-      <div className="flex flex-row w-full h-full mt-2">
+      <div className="flex flex-row w-full font-poppins mt-2 font-semibold overflow-hidden">
         <div className="border-gray-200 border w-full">
-          <div className="flex flex-row">
-            <div>icon</div>
-            <div>
+          <div className="flex flex-row relative">
+            <FeelsLike />
+            <div className="flex flex-col text-sm absolute right-7 top-3">
               <div>
                 {Math.round(today.main.feels_like)}
                 <sup>o</sup>
                 <span>C</span>
               </div>
-              <div>Feels like </div>
+              <div className="text-xs">Feels like</div>
             </div>
           </div>
         </div>
         <div className="border-gray-200 border w-full ">
-          <div className="flex flex-row">
-            <div>icon</div>
-            <div>
+          <div className="flex flex-row relative">
+            <Humidity />
+            <div className="flex flex-col text-sm absolute left-16 top-3">
               <div>
                 {today.main.humidity}
                 <span>%</span>
               </div>
-              <div>Humidity</div>
+              <div className="text-xs">Humidity</div>
             </div>
           </div>
         </div>
