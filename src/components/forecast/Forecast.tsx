@@ -1,18 +1,16 @@
 import { forecastType } from "../../types";
 import { titleCase } from "../../helpers/titleCase";
 import { getComponentName } from "../../helpers/getComponentName";
-import { lazy, Suspense, useCallback } from "react";
+import { lazy, Suspense } from "react";
 import Loading from "../Loading";
 import "./forecast.css";
 import BackArrowButton from "../Icons/BackArrowButton";
 import MapPin from "../Icons/MapPin";
 import FeelsLike from "../Icons/FeelsLike";
 import Humidity from "../Icons/Humidity";
-// import { useNavigate } from "react-router-dom";
-// import useForecast from "../../hooks/useForecast";
 
 type propsType = {
-  data: forecastType;
+  data: forecastType | null;
   handleClickFromForecast: () => void;
 };
 
@@ -20,11 +18,15 @@ export default function Forecast({
   data,
   handleClickFromForecast,
 }: propsType): JSX.Element {
-  const today = data.list[0];
-  const { icon } = today.weather[0];
-  let componentName = useCallback(getComponentName(icon), [icon]);
-  let Icon = lazy(() => import(`../Icons/${componentName}`));
+  const today = data?.list[0];
+  const icon: string = today == null ? "" : today?.weather[0]?.icon;
+  const componentName: string = getComponentName(icon);
+  // lazy load svg component to display the svg weather icon component based on the weather <Icon/>
+  const path = `../Icons/${componentName}`;
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+  const Icon = lazy(() => import(path));
 
+  // call home handleCLickFromForecast to set display forecast to false so the when back button is clicked from forecast it goes to home page
   const onBackArrowClick = () => {
     handleClickFromForecast();
   };

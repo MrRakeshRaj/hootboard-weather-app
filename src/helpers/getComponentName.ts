@@ -21,6 +21,6 @@ const svgList = [
 
 export const getComponentName = (icon: string) => {
   const name = svgList.find((obj) => obj.iconCode === icon)?.componentName;
-  console.log("name in helper ==========", name);
+  // console.log("name in helper ==========", name);
   return name ? name : "DefaultIcon";
 };
