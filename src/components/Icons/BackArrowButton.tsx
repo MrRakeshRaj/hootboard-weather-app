@@ -1,4 +1,8 @@
-const BackArrowButton = ({ onBackArrowClick }) => {
+type propType = {
+  onBackArrowClick: () => void;
+};
+
+const BackArrowButton = ({ onBackArrowClick }: propType) => {
   return (
     <>
       <button
