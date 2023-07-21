@@ -459,8 +459,6 @@
   animation-timing-function: ease-in-out;
 }
 
-@import "compass/css3";
-
 .preloader {
   position: absolute;
   margin-left: -55px;
@@ -510,7 +508,7 @@ svg {
 
 #sun .loadingPath {
   stroke-width: 0.18;
-  fill: #9ea1a4;
+  fill: #fd8300;
 }
 
 @keyframes rotate {
@@ -534,7 +532,7 @@ svg {
 
 .drop {
   opacity: 1;
-  background: #9ea1a4;
+  background: #4f7ba7;
   display: block;
   float: left;
   width: 3px;
@@ -611,6 +609,6 @@ svg {
   font-weight: bold;
   margin-top: 20px;
   font-size: 11px;
-  color: #a0a0a0;
+  color: #717171;
   width: 200px;
 }

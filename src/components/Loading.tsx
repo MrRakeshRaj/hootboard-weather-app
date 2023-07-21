@@ -1,4 +1,4 @@
-export default function Loading(): JSX.Element {
+export default function Loading(error: boolean): JSX.Element {
   return (
     <>
       <div className="preloader" style={{ opacity: 1 }}>
@@ -116,8 +116,13 @@ export default function Loading(): JSX.Element {
           <span className="drop"></span>
           <span className="drop"></span>
         </div>
-
-        <div className="loadingText">LOOKING OUTSIDE FOR YOU... ONE SEC</div>
+        {error ? (
+          <h1 className="loadingText text-xl font-bold font-poppins">
+            Error Loading Page
+          </h1>
+        ) : (
+          <div className="loadingText">LOOKING OUTSIDE FOR YOU... ONE SEC</div>
+        )}
       </div>
     </>
   );

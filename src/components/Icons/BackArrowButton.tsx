@@ -1,7 +1,10 @@
-const BackArrowButton = () => {
+const BackArrowButton = ({ onBackArrowClick }) => {
   return (
     <>
-      <button className="text-sky-400/100 text-lg font-bold">
+      <button
+        onClick={onBackArrowClick}
+        className="text-sky-400/100 text-lg font-bold"
+      >
         <svg
           className="h-8 w-8 text-sky-400/100 mr-2"
           width="24"

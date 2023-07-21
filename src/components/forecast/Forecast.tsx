@@ -8,22 +8,32 @@ import BackArrowButton from "../Icons/BackArrowButton";
 import MapPin from "../Icons/MapPin";
 import FeelsLike from "../Icons/FeelsLike";
 import Humidity from "../Icons/Humidity";
+// import { useNavigate } from "react-router-dom";
+// import useForecast from "../../hooks/useForecast";
 
 type propsType = {
   data: forecastType;
+  handleClickFromForecast: () => void;
 };
 
-export default function Forecast({ data }: propsType): JSX.Element {
+export default function Forecast({
+  data,
+  handleClickFromForecast,
+}: propsType): JSX.Element {
   const today = data.list[0];
   const { icon } = today.weather[0];
   let componentName = useCallback(getComponentName(icon), [icon]);
   let Icon = lazy(() => import(`../Icons/${componentName}`));
 
+  const onBackArrowClick = () => {
+    handleClickFromForecast();
+  };
+
   return (
     <section className="w-full md:max-w-[330px] flex flex-col h-full lg:h-[459px] bg-white  backdrop-blur-lg drop-shadow-lg rounded">
       <div className="p-1 ml-2 mt-2">
         <div className="flex flex-row">
-          <BackArrowButton />
+          <BackArrowButton onBackArrowClick={onBackArrowClick} />
           <h1 className="text-sky-400/100 text-lg font-bold">Weather App</h1>
         </div>
       </div>
@@ -36,7 +46,7 @@ export default function Forecast({ data }: propsType): JSX.Element {
         </div>
         <div className="absolute text-6xl mt-24 font-poppins w-full text-center">
           <span className="font-black">
-            {Math.round(today.main.temp)}
+            {Math.round(today?.main?.temp)}
             <sup
               className="font-extrabold text-xl"
               style={{
@@ -54,13 +64,13 @@ export default function Forecast({ data }: propsType): JSX.Element {
         {/* description and city */}
         <div className="font-poppins font-bold text-lg">
           <div className="w-full text-center pb-2 mt-0">
-            <span>{titleCase(today.weather[0].description)}</span>
+            <span>{titleCase(today?.weather[0]?.description)}</span>
           </div>
           <div className="w-full text-center">
             <div className="inline-flex text-center m-auto">
               <MapPin />
               <span className="text-base text-center">
-                {data.name}, {data.country}
+                {data?.name}, {data?.country}
               </span>
             </div>
           </div>
@@ -73,7 +83,7 @@ export default function Forecast({ data }: propsType): JSX.Element {
             <FeelsLike />
             <div className="flex flex-col text-sm absolute right-7 top-3">
               <div>
-                {Math.round(today.main.feels_like)}
+                {Math.round(today?.main?.feels_like)}
                 <sup>o</sup>
                 <span>C</span>
               </div>
@@ -86,7 +96,7 @@ export default function Forecast({ data }: propsType): JSX.Element {
             <Humidity />
             <div className="flex flex-col text-sm absolute left-16 top-3">
               <div>
-                {today.main.humidity}
+                {today?.main?.humidity}
                 <span>%</span>
               </div>
               <div className="text-xs">Humidity</div>
