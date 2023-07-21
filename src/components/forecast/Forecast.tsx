@@ -10,7 +10,7 @@ import FeelsLike from "../Icons/FeelsLike";
 import Humidity from "../Icons/Humidity";
 
 type propsType = {
-  data: forecastType | null;
+  data: forecastType;
   handleClickFromForecast: () => void;
 };
 
@@ -53,7 +53,9 @@ export default function Forecast({
           {/* weather icon and temperature */}
           <div className="flex relative flex-col justify-center p-2 mx-2">
             <div className="mt-0">
-              <Suspense fallback={<Loading />}>{Icon && <Icon />}</Suspense>
+              <Suspense fallback={<Loading error={false} />}>
+                {Icon && <Icon />}
+              </Suspense>
             </div>
             <div className="absolute text-6xl mt-24 font-poppins w-full text-center">
               <span className="font-black">
@@ -117,7 +119,7 @@ export default function Forecast({
           </div>
         </section>
       ) : (
-        <Loading />
+        <Loading error={false} />
       )}
     </>
   );

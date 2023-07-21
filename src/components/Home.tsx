@@ -2,7 +2,7 @@ import Search from "./Search";
 import GetDeviceLocation from "./GetDeviceLocation";
 import useForecast from "../hooks/useForecast";
 import Forecast from "./forecast/Forecast";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import Loading from "./Loading";
 
 export default function Home(): JSX.Element {
@@ -63,7 +63,7 @@ export default function Home(): JSX.Element {
           </section>
         )
       ) : (
-        <Loading />
+        <Loading error={false} />
       )}
     </>
   );

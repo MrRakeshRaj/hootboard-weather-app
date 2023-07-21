@@ -1,4 +1,4 @@
-export default function Loading(error: boolean): JSX.Element {
+export default function Loading({ error }: { error: boolean }): JSX.Element {
   return (
     <>
       <div className="preloader" style={{ opacity: 1 }}>

@@ -1,12 +1,12 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import { locationDetailsType } from "../types";
+import { locationDetailsType, forecastType } from "../types";
 // import { useNavigate } from "react-router-dom";
 
 const useForecast = () => {
   const [location, setLocation] = useState<string>("");
   const [locationDetails, setLocationDetails] = useState<[]>([]);
   const [city, setCity] = useState<locationDetailsType | null>(null);
-  const [forecast, setForecast] = useState<null>(null);
+  const [forecast, setForecast] = useState<forecastType | null>(null);
   // const navigate = useNavigate();
 
   const getLocationDetails = async (value: string) => {
