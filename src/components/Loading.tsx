@@ -116,7 +116,7 @@ export default function Loading(error: boolean): JSX.Element {
           <span className="drop"></span>
           <span className="drop"></span>
         </div>
-        {error ? (
+        {error === true ? (
           <h1 className="loadingText text-xl font-bold font-poppins">
             Error Loading Page
           </h1>

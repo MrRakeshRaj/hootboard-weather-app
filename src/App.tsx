@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <main className="flex justify-center items-center h-[100vh] w-full ">
-        <ErrorBoundary fallback={<NotFound />}>
+        <ErrorBoundary fallback={<NotFound error={true} />}>
           <Home />
         </ErrorBoundary>
       </main>
