@@ -14,11 +14,11 @@ User-friendly application that provides accurate weather information for any loc
 
 ## Screenshots
 1. HomePage
-![Screenshot of a home page of the weather app](<img width="1440" alt="home" src="https://github.com/MrRakeshRaj/simple-weather-app/assets/76464379/d4c0778d-8071-43eb-bf35-d722318c8497">)
+<img width="1440" alt="home" src="https://github.com/MrRakeshRaj/simple-weather-app/assets/76464379/d4c0778d-8071-43eb-bf35-d722318c8497">
 2. Option Select
-![Screenshot of a option select of the weather app](<img width="1440" alt="option-select" src="https://github.com/MrRakeshRaj/simple-weather-app/assets/76464379/6c077b85-599d-4560-af8c-5977b684f865">)
+<img width="1440" alt="option-select" src="https://github.com/MrRakeshRaj/simple-weather-app/assets/76464379/6c077b85-599d-4560-af8c-5977b684f865">
 3. Forecast
-![Screenshot of a option select of the weather app](<img width="1440" alt="forecast" src="https://github.com/MrRakeshRaj/simple-weather-app/assets/76464379/305c2945-7707-4bb7-9eb3-a47e4d4fcd20">)
+<img width="1440" alt="forecast" src="https://github.com/MrRakeshRaj/simple-weather-app/assets/76464379/305c2945-7707-4bb7-9eb3-a47e4d4fcd20">
 
 ## Screencast
 ![Video demo of the application ](https://github.com/MrRakeshRaj/simple-weather-app/assets/76464379/7e919ccd-b354-4b84-9a4f-9c23515ccc79)
