@@ -22,9 +22,8 @@ export default function Forecast({
   const icon: string = today == null ? "" : today?.weather[0]?.icon;
   const componentName: string = getComponentName(icon);
   // lazy load svg component to display the svg weather icon component based on the weather <Icon/>
-  const path = `../Icons/${componentName}.tsx`;
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-  const Icon = lazy(() => import(path));
+  const Icon = lazy(() => import(`../Icons/${componentName}.tsx`));
 
   // call home handleCLickFromForecast to set display forecast to false so the when back button is clicked from forecast it goes to home page
   const onBackArrowClick = () => {
