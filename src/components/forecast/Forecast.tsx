@@ -10,7 +10,7 @@ import FeelsLike from "../Icons/FeelsLike";
 import Humidity from "../Icons/Humidity";
 
 type propsType = {
-  data: forecastType;
+  data: forecastType | null;
   handleClickFromForecast: () => void;
 };
 
@@ -59,7 +59,7 @@ export default function Forecast({
             </div>
             <div className="absolute text-6xl mt-24 font-poppins w-full text-center">
               <span className="font-black">
-                {Math.round(today?.main?.temp)}
+                {Math.round(today?.main?.temp || 25)}
                 <sup
                   className="font-extrabold text-xl"
                   style={{
@@ -77,7 +77,7 @@ export default function Forecast({
             {/* description and city */}
             <div className="font-poppins font-bold text-lg">
               <div className="w-full text-center pb-2 mt-0">
-                <span>{titleCase(today?.weather[0]?.description)}</span>
+                <span>{titleCase(today?.weather[0]?.description || "")}</span>
               </div>
               <div className="w-full text-center">
                 <div className="inline-flex text-center m-auto">
@@ -96,7 +96,7 @@ export default function Forecast({
                 <FeelsLike />
                 <div className="flex flex-col text-sm absolute right-7 top-3">
                   <div>
-                    {Math.round(today?.main?.feels_like)}
+                    {Math.round(today?.main?.feels_like || 25)}
                     <sup>o</sup>
                     <span>C</span>
                   </div>

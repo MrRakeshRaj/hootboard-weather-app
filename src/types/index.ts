@@ -11,10 +11,10 @@ export type forecastType = {
     {
       dt: number;
       main: {
-        feels_like: number;
-        humidity: number;
+        feels_like: number | undefined;
+        humidity: number | undefined;
         pressure: number;
-        temp: number;
+        temp: number | undefined;
         temp_max: number;
         temp_min: number;
       };
