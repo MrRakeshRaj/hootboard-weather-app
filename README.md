@@ -1,9 +1,9 @@
 # simple-weather-app
 
-user-friendly application that provides accurate weather information for any location worldwide. With a clean and intuitive interface, users can quickly check the current weather conditions, including temperature and humidity.
+User-friendly application that provides accurate weather information for any location worldwide. With a clean and intuitive interface, users can quickly check the current weather conditions, including temperature and humidity.
 
 ## Tech Stack
-**React, Vite, Typescript, Tailwind CSS, Heroicons
+**React, Vite, Typescript, Tailwind CSS, Heroicons**
 
 ## Features
 - Real-time Weather Data: The app retrieves weather information from a reliable weather API, ensuring that users get the most accurate and up-to-date data.
