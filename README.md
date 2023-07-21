@@ -1,4 +1,4 @@
-# simple-weather-app
+# React Vite Weather App
 
 User-friendly application that provides accurate weather information for any location worldwide. With a clean and intuitive interface, users can quickly check the current weather conditions, including temperature and humidity.
 
