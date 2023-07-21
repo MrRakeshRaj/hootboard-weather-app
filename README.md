@@ -35,7 +35,7 @@ https://github.com/MrRakeshRaj/simple-weather-app.git
 ```
 3. Open a terminal and navigate to the project directory.
 ```
-Cd simple-weather-app
+cd simple-weather-app
 ```
 4. Run the following command to install the project dependencies:
 ```
@@ -58,12 +58,20 @@ npm run dev
 - Open http://localhost:5173/ in your preferred browser.
 - The Weather App should now be running and accessible in your browser.
 
+## Usage
+- Upon opening the application, the user is presented with the current weather conditions for their current location.
+- The user can search for weather information by entering a location in the search bar and pressing Enter or clicking the search button.
+- The application fetches the weather data from the API and displays the current conditions.
+
+
 ## API
 This app uses the [OpenWeatherMapAPI](https://openweathermap.org/) to fetch weather data. OpenWeatherMap provides a wide range of weather information, including current weather conditions, forecasts, and historical data. It offers various API endpoints and data formats to suit different needs.
+
 
 ## Contributing
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
+
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](https://github.com/MrRakeshRaj/simple-weather-app/blob/main/LICENSE).
 
