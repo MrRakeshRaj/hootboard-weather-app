@@ -6,11 +6,11 @@ User-friendly application that provides accurate weather information for any loc
 **React, Vite, Typescript, Tailwind CSS, Heroicons**
 
 ## Features
-- Real-time Weather Data: The app retrieves weather information from a reliable weather API, ensuring that users get the most accurate and up-to-date data.
-- Search Functionality: Users can easily search for weather information for any desired location, allowing them to stay informed about various places of interest.
-- Responsive Design: The app is fully responsive and works seamlessly across different devices and screen sizes, providing a consistent user experience.
-- User-Friendly Interface: The intuitive and visually appealing interface makes it easy for users to navigate and find the desired weather information effortlessly.
-- Additional Weather Details: Along with the basic weather information, the app may include additional details such as temperature and humidity.
+- **Real-time Weather Data**: The app retrieves weather information from a reliable weather API, ensuring that users get the most accurate and up-to-date data.
+- **Search Functionality**: Users can easily search for weather information for any desired location, allowing them to stay informed about various places of interest.
+- **Responsive Design**: The app is fully responsive and works seamlessly across different devices and screen sizes, providing a consistent user experience.
+- **User-Friendly Interface**: The intuitive and visually appealing interface makes it easy for users to navigate and find the desired weather information effortlessly.
+- **Additional Weather Details**: Along with the basic weather information, the app may include additional details such as temperature and humidity.
 
 ## Screenshots
 1. HomePage
@@ -62,6 +62,7 @@ npm run dev
 - Upon opening the application, the user is presented with the current weather conditions for their current location.
 - The user can search for weather information by entering a location in the search bar and pressing Enter or clicking the search button.
 - The application fetches the weather data from the API and displays the current conditions.
+- the user cab return to the search using back arrow button.
 
 
 ## API
